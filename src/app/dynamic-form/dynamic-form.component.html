@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 mt-4 d-flex justify-content-center">
+            <button (click)="addformfield()" class="btn btn-primary mt4">addForm</button>
+        </div>
+        <div class="col-md-6 mt-4">
+            <div *ngFor="let filed of formFiled;let i=index">
+                <app-form-field-model [filed]="filed" (remove)="removeFormFiled(i)" (dynamicData)="savedData($event)"></app-form-field-model>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12 d-flex justify-content-center" *ngIf="datas">
+        <button (click)="previewForm()" class="btn btn-primary mt-4">previewForm</button>
+    </div>
+    <div class="col-md-12"*ngFor="let item of datas | keyvalue" >
+     <p *ngIf="show">
+         <b>{{item.key}}</b> :  <b>{{item.value}}</b>
+     </p>
+    </div>
+    <p *ngIf="show&&!datas">data not found</p>
+</div>
+
+<router-outlet></router-outlet>

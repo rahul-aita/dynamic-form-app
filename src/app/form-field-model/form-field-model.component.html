@@ -1,0 +1,32 @@
+<div class="container ">
+    <div class="row">
+        <form #formSubmit="ngForm" (ngSubmit)="save(formSubmit.value)">
+            <div class="col-md-12 ">
+              <label for="labelinput"></label>
+              <input type="text" id="labelinput" class="form-control" placeholder="input value here" name="data" ngModel>
+            </div>
+            <div class="col-md-12">
+              <label for="typeSelect"></label>
+              <select class="form-select" aria-label="Default select example" id="typeSelect" name="type" ngModel>
+                <option selected>Open this select menu</option>
+                <option value="text">Text</option>
+                <option value="password">Password</option>
+                <option value="email">Email</option>
+              </select>
+            </div>
+            <div class="col-md-12 mt-2">
+              <div class="form-floating">
+                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px" name="comments" ngModel></textarea>
+                <label for="floatingTextarea2">Comments</label>
+              </div>
+            </div>
+            <div class="col-md-6 mt-4">
+              <button class="btn btn-danger" (click)="removeField()">Remove Field</button>
+            </div>
+            <div class="col-md-6 mt-4">
+              <button type="submit" class="btn btn-success">Submit</button>
+            </div>
+          </form>
+          
+    </div>
+</div>
